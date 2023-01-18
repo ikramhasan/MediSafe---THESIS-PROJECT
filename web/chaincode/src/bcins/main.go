@@ -32,13 +32,13 @@ var bcFunctions = map[string]func(shim.ChaincodeStubInterface, []string) pb.Resp
 	"claim_process":            processClaim,
 	"user_authenticate":        authUser,
 	"user_get_info":            getUser,
-	// Shop Peer
+	// Doctor Peer
 	"contract_create": createContract,
 	"user_create":     createUser,
-	// Repair Shop Peer
+	// Repair Doctor Peer
 	"repair_order_ls":       listRepairOrders,
 	"repair_order_complete": completeRepairOrder,
-	// Police Peer
+	// Patient Peer
 	"theft_claim_ls":      listTheftClaims,
 	"theft_claim_process": processTheftClaim,
 	"register_patient":    registerPatient,

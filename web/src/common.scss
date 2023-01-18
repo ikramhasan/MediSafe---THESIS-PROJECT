@@ -50,23 +50,23 @@
                 background-image: url('/img/icons/insurance company.svg');
             }
         }
-        &.shop-peer {
+        &.doctor-peer {
             top: 50%;
             right: 0;
             transform: translateY(-50%);
             &::after {
-                background-image: url('/img/icons/shop.svg');
+                background-image: url('/img/icons/doctor.svg');
             }
         }
-        &.police-peer {
+        &.patient-peer {
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             &::after {
-                background-image: url('/img/icons/police.svg');
+                background-image: url('/img/icons/patient.svg');
             }
         }
-        &.repair-shop-peer {
+        &.repair-doctor-peer {
             left: 0;
             top: 50%;
             transform: translateY(-50%);

@@ -260,8 +260,8 @@ class ChooseInsurancePage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    shopType: state.shop.type,
-    productInfo: state.shop.productInfo,
+    shopType: state.doctor.type,
+    productInfo: state.doctor.productInfo,
     contractsLoaded: Array.isArray(state.insurance.contractTypes),
     contractTypes: state.insurance.contractTypes || [],
     contractInfo: state.insurance.contractInfo

@@ -14,9 +14,9 @@ export default {
       'isomorphic-fetch',
       resolve(__dirname, 'src/common')
     ],
-    'shop': resolve(__dirname, 'src/shop/index'),
-    'police': resolve(__dirname, 'src/police/index'),
-    'repair-shop': resolve(__dirname, 'src/repair-shop/index'),
+    'doctor': resolve(__dirname, 'src/doctor/index'),
+    'patient': resolve(__dirname, 'src/patient/index'),
+    'repair-doctor': resolve(__dirname, 'src/repair-doctor/index'),
     'insurance': resolve(__dirname, 'src/insurance/index'),
     'block-explorer': resolve(__dirname, 'src/block-explorer/index')
   },

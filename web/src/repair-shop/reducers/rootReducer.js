@@ -2,6 +2,6 @@
 
 import { combineReducers } from 'redux';
 
-import repairShop from './repairShopReducer';
+import pharma from './pharmaReducer';
 
-export default combineReducers({ repairShop });
+export default combineReducers({ pharma });

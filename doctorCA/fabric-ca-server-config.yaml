@@ -9,7 +9,7 @@ tls:
     certfiles:
 
 ca:
-  name: shop-org
+  name: doctor-org
   keyfile: ./ca/key.pem
   certfile: ./ca/cert.pem
   chainfile: ./ca/cert.pem
@@ -60,7 +60,7 @@ csr:
     O: "IBM"
     OU: "Cloud"
   hosts:
-  - shop-ca
+  - doctor-ca
   - localhost
   ca:
     expiry: 131400h

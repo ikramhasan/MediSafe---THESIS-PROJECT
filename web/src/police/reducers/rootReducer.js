@@ -2,6 +2,6 @@
 
 import { combineReducers } from 'redux';
 
-import police from './policeReducer';
+import patient from './policeReducer';
 
-export default combineReducers({ police });
+export default combineReducers({ patient });

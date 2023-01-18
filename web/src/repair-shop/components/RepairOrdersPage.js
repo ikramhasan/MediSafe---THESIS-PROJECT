@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import Loading from '../../shared/Loading';
-import * as repairShopActions from '../actions/repairShopActions';
+import * as pharmaActions from '../actions/pharmaActions';
 import RepairOrderComponent from './RepairOrderComponent';
 
 class RepairOrdersPage extends React.Component {
@@ -18,7 +18,7 @@ class RepairOrdersPage extends React.Component {
       intl: intlShape.isRequired,
       repairOrders: PropTypes.array,
       loading: PropTypes.bool.isRequired,
-      repairShopActions: PropTypes.object.isRequired
+      pharmaActions: PropTypes.object.isRequired
     };
   }
 
@@ -31,7 +31,7 @@ class RepairOrdersPage extends React.Component {
   toRepairOrderComponent(repairOrder, index) {
     return (
       <RepairOrderComponent key={index} repairOrder={repairOrder}
-        onMarkedComplete={this.props.repairShopActions.completeRepairOrder} />
+        onMarkedComplete={this.props.pharmaActions.completeRepairOrder} />
     );
   }
 
@@ -61,14 +61,14 @@ class RepairOrdersPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    repairOrders: state.repairShop.repairOrders,
-    loading: Array.isArray(state.repairShop.repairOrders)
+    repairOrders: state.pharma.repairOrders,
+    loading: Array.isArray(state.pharma.repairOrders)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    repairShopActions: bindActionCreators(repairShopActions, dispatch)
+    pharmaActions: bindActionCreators(pharmaActions, dispatch)
   };
 }
 

@@ -50,7 +50,7 @@ class SummaryPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    productInfo: state.shop.productInfo,
+    productInfo: state.doctor.productInfo,
     contractInfo: state.insurance.contractInfo,
     user: state.userMgmt.user
   };

@@ -13,7 +13,7 @@ dist
 !chaincode/src
 !chaincode/src/bcins
 insurance-peer
-shop-peer
-repairshop-peer
-police-peer
+doctor-peer
+pharma-peer
+patient-peer
 www/blockchain/wallet

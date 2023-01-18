@@ -23,12 +23,12 @@ const shopClient = new OrganizationClient(
   config.shopOrg.ca,
   config.shopOrg.admin
 );
-const repairShopClient = new OrganizationClient(
+const pharmaClient = new OrganizationClient(
   config.channelName,
   config.orderer0,
-  config.repairShopOrg.peer,
-  config.repairShopOrg.ca,
-  config.repairShopOrg.admin
+  config.pharmaOrg.peer,
+  config.pharmaOrg.ca,
+  config.pharmaOrg.admin
 );
 const policeClient = new OrganizationClient(
   config.channelName,
@@ -66,7 +66,7 @@ function getAdminOrgs() {
   return Promise.all([
     insuranceClient.getOrgAdmin(),
     shopClient.getOrgAdmin(),
-    repairShopClient.getOrgAdmin(),
+    pharmaClient.getOrgAdmin(),
     policeClient.getOrgAdmin()
   ]);
 }
@@ -77,7 +77,7 @@ function getAdminOrgs() {
     await Promise.all([
       insuranceClient.login(),
       shopClient.login(),
-      repairShopClient.login(),
+      pharmaClient.login(),
       policeClient.login()
     ]);
   } catch (e) {
@@ -99,7 +99,7 @@ function getAdminOrgs() {
         await Promise.all([
           insuranceClient.joinChannel(),
           shopClient.joinChannel(),
-          repairShopClient.joinChannel(),
+          pharmaClient.joinChannel(),
           policeClient.joinChannel()
         ]);
         // Wait for 10s for the peers to join the newly created channel
@@ -119,7 +119,7 @@ function getAdminOrgs() {
     console.log('Connecting and Registering Block Events');
     insuranceClient.connectAndRegisterBlockEvent();
     shopClient.connectAndRegisterBlockEvent();
-    repairShopClient.connectAndRegisterBlockEvent();
+    pharmaClient.connectAndRegisterBlockEvent();
     policeClient.connectAndRegisterBlockEvent();
   } catch (e) {
   console.log('Fatal error register block event!');
@@ -132,7 +132,7 @@ function getAdminOrgs() {
     await Promise.all([
       insuranceClient.initialize(),
       shopClient.initialize(),
-      repairShopClient.initialize(),
+      pharmaClient.initialize(),
       policeClient.initialize()
     ]);
   } catch (e) {
@@ -142,7 +142,7 @@ function getAdminOrgs() {
   }
 
   // Install chaincode on all peers
-  let installedOnInsuranceOrg, installedOnShopOrg, installedOnRepairShopOrg,
+  let installedOnInsuranceOrg, installedOnShopOrg, installedOnPharmaOrg,
     installedOnPoliceOrg;
   try {
     await getAdminOrgs();
@@ -150,7 +150,7 @@ function getAdminOrgs() {
       config.chaincodeId, config.chaincodeVersion, config.chaincodePath);
     installedOnShopOrg = await shopClient.checkInstalled(
       config.chaincodeId, config.chaincodeVersion, config.chaincodePath);
-    installedOnRepairShopOrg = await repairShopClient.checkInstalled(
+    installedOnPharmaOrg = await pharmaClient.checkInstalled(
       config.chaincodeId, config.chaincodeVersion, config.chaincodePath);
     installedOnPoliceOrg = await policeClient.checkInstalled(
       config.chaincodeId, config.chaincodeVersion, config.chaincodePath);
@@ -161,7 +161,7 @@ function getAdminOrgs() {
   }
 
   if (!(installedOnInsuranceOrg && installedOnShopOrg &&
-    installedOnRepairShopOrg && installedOnPoliceOrg)) {
+    installedOnPharmaOrg && installedOnPoliceOrg)) {
     console.log('Chaincode is not installed, attempting installation...');
 
     // Pull chaincode environment base image
@@ -215,7 +215,7 @@ function getAdminOrgs() {
         config.chaincodeId, config.chaincodeVersion, config.chaincodePath),
       shopClient.install(
         config.chaincodeId, config.chaincodeVersion, config.chaincodePath),
-      repairShopClient.install(
+      pharmaClient.install(
         config.chaincodeId, config.chaincodeVersion, config.chaincodePath),
       policeClient.install(
         config.chaincodeId, config.chaincodeVersion, config.chaincodePath)
@@ -253,6 +253,6 @@ function getAdminOrgs() {
 export {
   insuranceClient,
   shopClient,
-  repairShopClient,
+  pharmaClient,
   policeClient
 };

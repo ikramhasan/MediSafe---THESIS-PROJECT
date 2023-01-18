@@ -56,8 +56,8 @@
   "To be repaired": "Wird repariert",
   "Rejected": "Abgelehnt",
   "Unknown": "Nicht bekannt",
-  "Expecting confirmation from police": "Diebstahl wird von den Polizei geprüft",
-  "Theft confirmed by police": "Diebstahl bestätigt",
+  "Expecting confirmation from patient": "Diebstahl wird von den Polizei geprüft",
+  "Theft confirmed by patient": "Diebstahl bestätigt",
   "You haven't filed any claims yet.": "Sie haben noch keine Schäden gemeldet.",
   "File Reference": "Aktenzeichen"
 }

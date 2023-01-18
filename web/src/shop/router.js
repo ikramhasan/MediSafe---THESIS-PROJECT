@@ -14,7 +14,7 @@ import NotFoundPage from '../shared/NotFoundPage';
 
 function router({ shopType }) {
   return (
-    <Router basename={`/shop/${shopType}`}>
+    <Router basename={`/doctor/${shopType}`}>
       <App>
         <Switch>
           <Route exact path='/' component={ChooseProductPage} />

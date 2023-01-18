@@ -1,5 +1,5 @@
 'use strict';
 
-export const repairShop = {
+export const pharma = {
   repairOrders: null
 };

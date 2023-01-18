@@ -1,12 +1,12 @@
 'use strict';
 
 import express from 'express';
-import * as ShopPeer from '../blockchain/shopPeer';
+import * as DoctorPeer from '../blockchain/doctorPeer';
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('shop-main', { shopActive: true });
+  res.render('doctor-main', { shopActive: true });
 });
 
 router.get('/login', (req, res) => {
@@ -35,7 +35,7 @@ router.post('/api/contract-types', async (req, res) => {
 
   let contractTypes;
   try {
-    contractTypes = await ShopPeer.getContractTypes(letter);
+    contractTypes = await DoctorPeer.getContractTypes(letter);
   } catch (e) {
     console.log(e);
     res.json({ error: "Could not retrieve contract types!" });
@@ -62,7 +62,7 @@ router.post('/api/request-user', async (req, res) => {
 
     let passwordProposal = generatePassword();
     try {
-      let responseUser = await ShopPeer.createUser({
+      let responseUser = await DoctorPeer.createUser({
         username: email,
         firstName: firstName,
         lastName: lastName,
@@ -85,7 +85,7 @@ router.post('/api/prescribe', async (req, res) => {
     try {
       let { username, firstName, lastName } = user;
       const passwordProposal = generatePassword();
-      let loginInfo = await ShopPeer.createContract({
+      let loginInfo = await DoctorPeer.createContract({
         contractTypeUuid,
         username,
         condition,
@@ -115,7 +115,7 @@ router.post('/api/prescribe-delete', async (req, res) => {
       try {
         let { username, firstName, lastName } = user;
         const passwordProposal = generatePassword();
-        let loginInfo = await ShopPeer.prescribe({
+        let loginInfo = await DoctorPeer.prescribe({
           contractTypeUuid,
           username,
           password: passwordProposal,
@@ -142,7 +142,7 @@ router.post('/api/blocks', async (req, res) => {
     res.json({ error: 'Invalid request' });
   }
   try {
-    const blocks = await ShopPeer.getBlocks(noOfLastBlocks);
+    const blocks = await DoctorPeer.getBlocks(noOfLastBlocks);
     res.json(blocks);
   } catch (e) {
     res.json({ error: 'Error accessing blockchain.' });
@@ -150,7 +150,7 @@ router.post('/api/blocks', async (req, res) => {
 });
 
 router.get('*', (req, res) => {
-  res.render('shop', {
+  res.render('doctor', {
     shopActive: true,
     bikesActive: req.originalUrl.includes('bikes'),
     smartPhonesActive: req.originalUrl.includes('smart-phones'),
@@ -183,7 +183,7 @@ function generatePassword() {
 }
 
 function wsConfig(io) {
-  ShopPeer.on('block', block => { io.emit('block', block); });
+  DoctorPeer.on('block', block => { io.emit('block', block); });
 }
 
 export default router;

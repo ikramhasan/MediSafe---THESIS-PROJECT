@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch';
 
 export function listTheftClaims() {
-  return fetch('/police/api/claims', {
+  return fetch('/patient/api/claims', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ export function listTheftClaims() {
 }
 
 export function processTheftClaim(contractUuid, uuid, isTheft, fileReference) {
-  return fetch('/police/api/process-claim', {
+  return fetch('/patient/api/process-claim', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'

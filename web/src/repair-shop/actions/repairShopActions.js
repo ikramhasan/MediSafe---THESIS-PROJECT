@@ -1,6 +1,6 @@
 'use strict';
 
-import * as RepairShopActionType from './repairShopActionTypes';
+import * as PharmaActionType from './pharmaActionTypes';
 import * as Api from '../api';
 
 export function loadRepairOrders() {
@@ -19,7 +19,7 @@ export function loadRepairOrders() {
 
 function loadRepairOrdersSuccess(repairOrders) {
   return {
-    type: RepairShopActionType.LOAD_REPAIR_ORDERS_SUCCESS,
+    type: PharmaActionType.LOAD_REPAIR_ORDERS_SUCCESS,
     repairOrders
   };
 }
@@ -37,7 +37,7 @@ export function completeRepairOrder(uuid) {
 
 function completeRepairOrderSuccess(uuid) {
   return {
-    type: RepairShopActionType.COMPLETE_REPAIR_ORDER_SUCCESS,
+    type: PharmaActionType.COMPLETE_REPAIR_ORDER_SUCCESS,
     uuid
   };
 }

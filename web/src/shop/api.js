@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch';
 
 export function getContractTypes(shopType) {
-  return fetch('/shop/api/contract-types', {
+  return fetch('/doctor/api/contract-types', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ export function getContractTypes(shopType) {
 }
 
 export function requestNewUser(user) {
-  return fetch('/shop/api/request-user', {
+  return fetch('/doctor/api/request-user', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ export function requestNewUser(user) {
 }
 
 export function enterContract(user, contractTypeUuid, additionalInfo) {
-  return fetch('/shop/api/enter-contract', {
+  return fetch('/doctor/api/enter-contract', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'

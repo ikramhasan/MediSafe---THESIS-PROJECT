@@ -10,7 +10,7 @@ import NotFoundPage from '../shared/NotFoundPage';
 
 export default function router() {
   return (
-    <Router basename='/police'>
+    <Router basename='/patient'>
       <App>
         <Switch>
           <Route exact path='/' component={TheftClaimsPage} />

@@ -68,26 +68,26 @@ cd build-blockchain-insurance-app
 Bạn sẽ thấy đầu ra ở cửa sổ dòng lệnh xuất hiện như sau:
 
 ```
-Creating repairshop-ca ...
+Creating pharma-ca ...
 Creating insurance-ca ...
-Creating shop-ca ...
-Creating police-ca ...
+Creating doctor-ca ...
+Creating patient-ca ...
 Creating orderer0 ...
-Creating repairshop-ca
+Creating pharma-ca
 Creating insurance-ca
-Creating police-ca
-Creating shop-ca
+Creating patient-ca
+Creating doctor-ca
 Creating orderer0 ... done
 Creating insurance-peer ...
 Creating insurance-peer ... done
-Creating shop-peer ...
-Creating shop-peer ... done
-Creating repairshop-peer ...
-Creating repairshop-peer ... done
+Creating doctor-peer ...
+Creating doctor-peer ... done
+Creating pharma-peer ...
+Creating pharma-peer ... done
 Creating web ...
-Creating police-peer ...
+Creating patient-peer ...
 Creating web
-Creating police-peer ... done
+Creating patient-peer ... done
 ```
 
 **Đợi vài phút để ứng dụng cài đặt và khởi tạo hợp đồng thông minh (chaincode) trên mạng**
@@ -125,11 +125,11 @@ Trang chủ hiển thị những bên tham gia (Peers) trong mạng. Bạn có t
 
 ![Blockchain Insurance](images/home.png)
 
-Giả sử bạn là một người tiêu dùng (gọi là Biker) muốn mua điện thoại, xe đạp hoặc ván trượt tuyết. Bằng cách nhấp chuột vào mục "Go to the shop", bạn sẽ được chuyển hướng đến cửa hàng nơi bạn có thể xem danh mục các sản phẩm.
+Giả sử bạn là một người tiêu dùng (gọi là Biker) muốn mua điện thoại, xe đạp hoặc ván trượt tuyết. Bằng cách nhấp chuột vào mục "Go to the doctor", bạn sẽ được chuyển hướng đến cửa hàng nơi bạn có thể xem danh mục các sản phẩm.
 
 ![Customer Shopping](images/Picture1.png)
 
-Bây giờ bạn có thể thấy ba sản phẩm được cung cấp bởi cửa hàng. Ngoài ra, mỗi sản phẩm sẽ đi kèm theo hợp đồng bảo hiểm. Trong kịch bản của chúng tôi, bạn là một người đam mê thể thao ngoài trời muốn mua một chiếc Xe đạp mới. Do đó, bạn sẽ nhấp chuột vào phần Cửa hàng xe đạp (Bike Shop).
+Bây giờ bạn có thể thấy ba sản phẩm được cung cấp bởi cửa hàng. Ngoài ra, mỗi sản phẩm sẽ đi kèm theo hợp đồng bảo hiểm. Trong kịch bản của chúng tôi, bạn là một người đam mê thể thao ngoài trời muốn mua một chiếc Xe đạp mới. Do đó, bạn sẽ nhấp chuột vào phần Cửa hàng xe đạp (Bike Doctor).
 
 ![Shopping](images/Picture2.png)
 
@@ -137,7 +137,7 @@ In this section, you are viewing the different bikes available in the store. You
 
 Trong phần này, bạn sẽ xem những chiếc xe đạp khác nhau có sẵn trong cửa hàng. Bạn có thể chọn một trong bốn xe đạp khác nhau. Bằng cách nhấp vào tiếp theo (Next), bạn sẽ được chuyển tiếp đến trang tiếp theo để nhập thông tin cá nhân của mình.
 
-![Bike Shop](images/Picture3.png)
+![Bike Doctor](images/Picture3.png)
 
 Bạn có thể lựa chọn giữa các loại hợp đồng bảo hiểm khác nhau về các điều khoản và điều kiện. Bạn được yêu cầu nhập dữ liệu cá nhân mình, chọn ngày bắt đầu và ngày kết thúc hợp đồng. Vì các hợp đồng có xu hướng ngắn hạn hoặc theo sự kiện, bạn có thể chọn thời hạn hợp đồng theo từng ngày. Giá hàng ngày của hợp đồng bảo hiểm được tính theo một công thức đã được xác định trong chaincode. Bằng trị cách nhấp chuột vào nút tiếp theo (Next), bạn sẽ được chuyển tiếp đến một màn hình tóm tắt giao dịch của bạn và hiển thị cho bạn tổng số tiền cần chi trả.
 
@@ -185,11 +185,11 @@ Bằng cách chọn phần "claim processing", công ty bảo hiểm có thể x
 
 Phía cảnh sát có thể xem các khiếu nại trộm cắp. Trong trường hợp chiếc xe đạp đã được báo cáo là bị đánh cắp, họ có thể xác nhận khiếu nại. Trong trường hợp không có hành vi trộm cắp đã được báo cáo, họ có thể từ chối yêu cầu và nó sẽ không được xử lý.
 
-![Police Peer](images/Picture13.png)
+![Patient Peer](images/Picture13.png)
 
 Hãy giả sử Biker báo cáo chiếc xe bị đánh cắp. Cảnh sát sẽ xác nhận khiếu nại và một khối sẽ được thêm vào chuỗi.
 
-![Police Transaction](images/Picture14.png)
+![Patient Transaction](images/Picture14.png)
 
 Quay trở lại tab “claim processing”, bạn có thể thấy rằng công ty bảo hiểm có tùy chọn cầu bồi thường vì cảnh sát đã xác nhận rằng chiếc xe đã bị đánh cắp.
 
@@ -210,7 +210,7 @@ Tab “claim processing” cho thấy các yêu cầu chưa được xử lý. M
 
 Cửa hàng sửa chữa sẽ nhận được một thông báo hiển thị yêu cầu sửa chữa. Sau khi họ hoàn thành công việc sửa chữa, cửa hàng sửa chữa có thể đánh dấu đơn hàng là đã hoàn thành. Sau đó, công ty bảo hiểm sẽ nhận được tin nhắn để tiến hành thanh toán cho cửa hàng sửa chữa. Một khối sẽ được thêm vào chuỗi.
 
-![Reapir Shop](images/Picture19.png)
+![Reapir Doctor](images/Picture19.png)
 
 Biker có thể thấy trong tab “claim self-service”, rằng yêu cầu đã được giải quyết và chiếc xe đã được sửa chữa bởi cửa hàng.
 

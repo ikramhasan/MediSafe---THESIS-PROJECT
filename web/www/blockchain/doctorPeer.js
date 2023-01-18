@@ -17,7 +17,7 @@ export async function getContractTypes(shopType) {
     return await query('contract_type_ls', { shopType });
   } catch (e) {
     throw wrapError(
-      `Error getting contract types for shop type ${shopType} : ${e.message}`
+      `Error getting contract types for doctor type ${shopType} : ${e.message}`
       , e);
   }
 }
@@ -125,8 +125,8 @@ async function invoke(fcn, ...args) {
 
   isQuery = false;
   
-  console.log(`args in shopPeer invoke: ${util.inspect(...args)}`)
-  console.log(`func in shopPeer invoke: ${util.inspect(fcn)}`)
+  console.log(`args in doctorPeer invoke: ${util.inspect(...args)}`)
+  console.log(`func in doctorPeer invoke: ${util.inspect(fcn)}`)
 
   if (config.isCloud) {
     await network.invokeCC(isQuery, peerType, fcn, ...args);
@@ -141,8 +141,8 @@ async function query(fcn, ...args) {
 
   isQuery = true;
 
-  console.log(`args in shopPeer query: ${util.inspect(...args)}`)
-  console.log(`func in shopPeer query: ${util.inspect(fcn)}`)
+  console.log(`args in doctorPeer query: ${util.inspect(...args)}`)
+  console.log(`func in doctorPeer query: ${util.inspect(fcn)}`)
 
   console.log('config.isCLoud: ');
   console.log(config.isCloud);

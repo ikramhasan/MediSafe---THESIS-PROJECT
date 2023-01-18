@@ -6,8 +6,8 @@
 
 # Build Blockchain Insurance Application
 
-This project showcases the use of blockchain in insurance domain for claim processing. In this application, we have four participants, namely insurance, police, repair shop and the shop. Furthermore,
-each participant will own its own peer node. The insurance peer is the insurance company providing the insurance for the products and it is responsible for processing the claims. Police peer is responsible for verifying the theft claims. Repair shop peer is responsible for repairs of the product while shop peer sells the products to consumer. The value of running this network on the IBM Blockchain Platform is that 
+This project showcases the use of blockchain in insurance domain for claim processing. In this application, we have four participants, namely insurance, patient, repair doctor and the doctor. Furthermore,
+each participant will own its own peer node. The insurance peer is the insurance company providing the insurance for the products and it is responsible for processing the claims. Patient peer is responsible for verifying the theft claims. Repair doctor peer is responsible for repairs of the product while doctor peer sells the products to consumer. The value of running this network on the IBM Blockchain Platform is that 
 you can easily customize the network infrastructure as needed, whether 
 that is the location of the nodes, the CPU and RAM of the hardware, the
 endorsement policy needed to reach consensus, or adding new organizations and members to the network.  
@@ -158,22 +158,22 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 </p>
 <br>
 
-* #### Create your shop organization CA (process is same as shown in gif above)
+* #### Create your doctor organization CA (process is same as shown in gif above)
   - Click <b>Add Certificate Authority</b>.
   - Click <b>IBM Cloud</b> under <b>Create Certificate Authority</b> and <b>Next</b>.
-  - Give it a <b>Display name</b> of `Shop CA`.  
+  - Give it a <b>Display name</b> of `Doctor CA`.  
   - Specify an <b>Admin ID</b> of `admin` and <b>Admin Secret</b> of `adminpw`.
 
-* #### Create your repair shop organization CA (process is same as shown in gif above)
+* #### Create your repair doctor organization CA (process is same as shown in gif above)
   - Click <b>Add Certificate Authority</b>.
   - Click <b>IBM Cloud</b> under <b>Create Certificate Authority</b> and <b>Next</b>.
-  - Give it a <b>Display name</b> of `Repair Shop CA`.  
+  - Give it a <b>Display name</b> of `Repair Doctor CA`.  
   - Specify an <b>Admin ID</b> of `admin` and <b>Admin Secret</b> of `adminpw`.
 
-* #### Create your police organization CA (process is same as shown in gif above)
+* #### Create your patient organization CA (process is same as shown in gif above)
   - Click <b>Add Certificate Authority</b>.
   - Click <b>IBM Cloud</b> under <b>Create Certificate Authority</b> and <b>Next</b>.
-  - Give it a <b>Display name</b> of `Police CA`.  
+  - Give it a <b>Display name</b> of `Patient CA`.  
   - Specify an <b>Admin ID</b> of `admin` and <b>Admin Secret</b> of `adminpw`.
 
 
@@ -188,20 +188,20 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 </p>
 <br>
 
-* #### Use your CA to register shop identities (process is same as shown in gif above)
-  - Select the <b>Shop CA</b> Certificate Authority that we created.
+* #### Use your CA to register doctor identities (process is same as shown in gif above)
+  - Select the <b>Doctor CA</b> Certificate Authority that we created.
   - First, we will register an admin for our Insurance Organization. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `shopAdmin`, and <b>Enroll Secret</b> of `shopAdminpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `client` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
-  - We will repeat the process to create an identity of the peer. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `shopPeer`, and <b>Enroll Secret</b> of `shopPeerpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `peer` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
+  - We will repeat the process to create an identity of the peer. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `doctorPeer`, and <b>Enroll Secret</b> of `doctorPeerpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `peer` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
 
-* #### Use your CA to register repair shop identities (process is same as shown in gif above)
-  - Select the <b>Repair Shop CA</b> Certificate Authority that we created.
-  - First, we will register an admin for our Insurance Organization. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `repairShopAdmin`, and <b>Enroll Secret</b> of `repairShopAdminpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `client` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
-  - We will repeat the process to create an identity of the peer. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `repairShopPeer`, and <b>Enroll Secret</b> of `repairShopPeerpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `peer` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
+* #### Use your CA to register repair doctor identities (process is same as shown in gif above)
+  - Select the <b>Repair Doctor CA</b> Certificate Authority that we created.
+  - First, we will register an admin for our Insurance Organization. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `pharmaAdmin`, and <b>Enroll Secret</b> of `pharmaAdminpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `client` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
+  - We will repeat the process to create an identity of the peer. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `pharmaPeer`, and <b>Enroll Secret</b> of `pharmaPeerpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `peer` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
 
-* #### Use your CA to register police shop identities (process is same as shown in gif above)
-  - Select the <b>Police CA</b> Certificate Authority that we created.
+* #### Use your CA to register patient doctor identities (process is same as shown in gif above)
+  - Select the <b>Patient CA</b> Certificate Authority that we created.
   - First, we will register an admin for our Insurance Organization. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `policeAdmin`, and <b>Enroll Secret</b> of `policeAdminpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `client` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
-  - We will repeat the process to create an identity of the peer. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `policePeer`, and <b>Enroll Secret</b> of `policePeerpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `peer` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
+  - We will repeat the process to create an identity of the peer. Click on the <b>Register User</b> button.  Give an <b>Enroll ID</b> of `patientPeer`, and <b>Enroll Secret</b> of `patientPeerpw`.  Click <b>Next</b>.  Set the <b>Type</b> for this identity as `peer` and select `org1` from the affiliated organizations drop-down list. We will leave the <b>Maximum enrollments</b> and <b>Add Attributes</b> fields blank.
 
 
 ## Step 3. Build a network - Create MSP Definitions
@@ -219,25 +219,25 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 </p>
 <br>
 
-* #### Create the shop MSP definition (same process as shown in gif above)
+* #### Create the doctor MSP definition (same process as shown in gif above)
   - Navigate to the <b>Organizations</b> tab in the left navigation and click <b>Create MSP definition</b>.
-  - Enter the <b>MSP Display name</b> as `Shop MSP` and an <b>MSP ID</b> of `shopmsp`.
-  - Under <b>Root Certificate Authority</b> details, specify the peer CA that we created `Shop CA` as the root CA for the organization.
-  - Give the <b>Enroll ID</b> and <b>Enroll secret</b> for your organization admin, `shopAdmin` and `shopAdminpw`. Then, give the Identity name, `Shop Admin`.
+  - Enter the <b>MSP Display name</b> as `Doctor MSP` and an <b>MSP ID</b> of `shopmsp`.
+  - Under <b>Root Certificate Authority</b> details, specify the peer CA that we created `Doctor CA` as the root CA for the organization.
+  - Give the <b>Enroll ID</b> and <b>Enroll secret</b> for your organization admin, `shopAdmin` and `shopAdminpw`. Then, give the Identity name, `Doctor Admin`.
   - Click the <b>Generate</b> button to enroll this identity as the admin of your organization and export the identity to the wallet. Click <b>Export</b> to export the admin certificates to your file system. Finally click <b>Create MSP definition</b>.
 
-* #### Create the repair shop MSP definition (same process as shown in gif above)
+* #### Create the repair doctor MSP definition (same process as shown in gif above)
   - Navigate to the <b>Organizations</b> tab in the left navigation and click <b>Create MSP definition</b>.
-  - Enter the <b>MSP Display name</b> as `Repair Shop MSP` and an <b>MSP ID</b> of `repairshopmsp`.
-  - Under <b>Root Certificate Authority</b> details, specify the peer CA that we created `Repair Shop CA` as the root CA for the organization.
-  - Give the <b>Enroll ID</b> and <b>Enroll secret</b> for your organization admin, `repairShopAdmin` and `repairShopAdminpw`. Then, give the Identity name, `Repair Shop Admin`.
+  - Enter the <b>MSP Display name</b> as `Repair Doctor MSP` and an <b>MSP ID</b> of `pharmamsp`.
+  - Under <b>Root Certificate Authority</b> details, specify the peer CA that we created `Repair Doctor CA` as the root CA for the organization.
+  - Give the <b>Enroll ID</b> and <b>Enroll secret</b> for your organization admin, `pharmaAdmin` and `pharmaAdminpw`. Then, give the Identity name, `Repair Doctor Admin`.
   - Click the <b>Generate</b> button to enroll this identity as the admin of your organization and export the identity to the wallet. Click <b>Export</b> to export the admin certificates to your file system. Finally click <b>Create MSP definition</b>.
 
-* #### Create the police MSP definition (same process as shown in gif above)
+* #### Create the patient MSP definition (same process as shown in gif above)
   - Navigate to the <b>Organizations</b> tab in the left navigation and click <b>Create MSP definition</b>.
-  - Enter the <b>MSP Display name</b> as `Police MSP` and an <b>MSP ID</b> of `policemsp`.
-  - Under <b>Root Certificate Authority</b> details, specify the peer CA that we created `Police CA` as the root CA for the organization.
-  - Give the <b>Enroll ID</b> and <b>Enroll secret</b> for your organization admin, `policeAdmin` and `policeAdminpw`. Then, give the Identity name, `Police Admin`.
+  - Enter the <b>MSP Display name</b> as `Patient MSP` and an <b>MSP ID</b> of `policemsp`.
+  - Under <b>Root Certificate Authority</b> details, specify the peer CA that we created `Patient CA` as the root CA for the organization.
+  - Give the <b>Enroll ID</b> and <b>Enroll secret</b> for your organization admin, `policeAdmin` and `policeAdminpw`. Then, give the Identity name, `Patient Admin`.
   - Click the <b>Generate</b> button to enroll this identity as the admin of your organization and export the identity to the wallet. Click <b>Export</b> to export the admin certificates to your file system. Finally click <b>Create MSP definition</b>.
 
 
@@ -258,31 +258,31 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 </p>
 <br>
  
-* Create a shop peer (same process as shown in gif above)
+* Create a doctor peer (same process as shown in gif above)
   - On the <b>Nodes</b> page, click <b>Add peer</b>.
   - Click <b>IBM Cloud</b> under Create a new peer and <b>Next</b>.
-  - Give your peer a <b>Display name</b> of `Shop Peer`.
-  - On the next screen, select `Shop CA` as your <b>Certificate Authority</b>. Then, give the <b>Enroll ID</b> and <b>Enroll secret</b> for the peer identity that you created for your peer, `shopPeer`, and `shopPeerpw`. Then, select the <b>Administrator Certificate (from MSP)</b>, `Shop MSP`, from the drop-down list and click <b>Next</b>.
+  - Give your peer a <b>Display name</b> of `Doctor Peer`.
+  - On the next screen, select `Doctor CA` as your <b>Certificate Authority</b>. Then, give the <b>Enroll ID</b> and <b>Enroll secret</b> for the peer identity that you created for your peer, `doctorPeer`, and `doctorPeerpw`. Then, select the <b>Administrator Certificate (from MSP)</b>, `Doctor MSP`, from the drop-down list and click <b>Next</b>.
   - Give the <b>TLS Enroll ID</b>, `admin`, and <b>TLS Enroll secret</b>, `adminpw`, the same values are the Enroll ID and Enroll secret that you gave when creating the CA.  Leave the <b>TLS CSR hostname</b> blank.
-  - The last side panel will ask you to <b>Associate an identity</b> and make it the admin of your peer. Select your peer admin identity `Shop Admin`.
+  - The last side panel will ask you to <b>Associate an identity</b> and make it the admin of your peer. Select your peer admin identity `Doctor Admin`.
   - Review the summary and click <b>Submit</b>.
 
-* Create a repair shop peer (same process as shown in gif above)
+* Create a repair doctor peer (same process as shown in gif above)
   - On the <b>Nodes</b> page, click <b>Add peer</b>.
   - Click <b>IBM Cloud</b> under Create a new peer and <b>Next</b>.
-  - Give your peer a <b>Display name</b> of `Repair Shop Peer`.
-  - On the next screen, select `Repair Shop CA` as your <b>Certificate Authority</b>. Then, give the <b>Enroll ID</b> and <b>Enroll secret</b> for the peer identity that you created for your peer, `repairShopPeer`, and `repairShopPeerpw`. Then, select the <b>Administrator Certificate (from MSP)</b>, `Repair Shop MSP`, from the drop-down list and click <b>Next</b>.
+  - Give your peer a <b>Display name</b> of `Repair Doctor Peer`.
+  - On the next screen, select `Repair Doctor CA` as your <b>Certificate Authority</b>. Then, give the <b>Enroll ID</b> and <b>Enroll secret</b> for the peer identity that you created for your peer, `pharmaPeer`, and `pharmaPeerpw`. Then, select the <b>Administrator Certificate (from MSP)</b>, `Repair Doctor MSP`, from the drop-down list and click <b>Next</b>.
   - Give the <b>TLS Enroll ID</b>, `admin`, and <b>TLS Enroll secret</b>, `adminpw`, the same values are the Enroll ID and Enroll secret that you gave when creating the CA.  Leave the <b>TLS CSR hostname</b> blank.
-  - The last side panel will ask you to <b>Associate an identity</b> and make it the admin of your peer. Select your peer admin identity `Repair Shop Admin`.
+  - The last side panel will ask you to <b>Associate an identity</b> and make it the admin of your peer. Select your peer admin identity `Repair Doctor Admin`.
   - Review the summary and click <b>Submit</b>.
 
-* Create a police peer (same process as shown in gif above)
+* Create a patient peer (same process as shown in gif above)
   - On the <b>Nodes</b> page, click <b>Add peer</b>.
   - Click <b>IBM Cloud</b> under Create a new peer and <b>Next</b>.
-  - Give your peer a <b>Display name</b> of `Police Peer`.
-  - On the next screen, select `Police CA` as your <b>Certificate Authority</b>. Then, give the <b>Enroll ID</b> and <b>Enroll secret</b> for the peer identity that you created for your peer, `policePeer`, and `policePeerpw`. Then, select the <b>Administrator Certificate (from MSP)</b>, `Police MSP`, from the drop-down list and click <b>Next</b>.
+  - Give your peer a <b>Display name</b> of `Patient Peer`.
+  - On the next screen, select `Patient CA` as your <b>Certificate Authority</b>. Then, give the <b>Enroll ID</b> and <b>Enroll secret</b> for the peer identity that you created for your peer, `patientPeer`, and `patientPeerpw`. Then, select the <b>Administrator Certificate (from MSP)</b>, `Patient MSP`, from the drop-down list and click <b>Next</b>.
   - Give the <b>TLS Enroll ID</b>, `admin`, and <b>TLS Enroll secret</b>, `adminpw`, the same values are the Enroll ID and Enroll secret that you gave when creating the CA.  Leave the <b>TLS CSR hostname</b> blank.
-  - The last side panel will ask you to <b>Associate an identity</b> and make it the admin of your peer. Select your peer admin identity `Police Admin`.
+  - The last side panel will ask you to <b>Associate an identity</b> and make it the admin of your peer. Select your peer admin identity `Patient Admin`.
   - Review the summary and click <b>Submit</b>.
 
 ## Step 5. Build a network - Create Orderer
@@ -337,7 +337,7 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
   - Under <b>Consortium Members</b>, click <b>Add organization</b>.
   - From the drop-down list, select `Insurance MSP`.
   - Click <b>Submit</b>.
-  - Repeat the same steps, but add `Shop MSP`, `Repair Shop MSP`, and `Police MSP` as well.
+  - Repeat the same steps, but add `Doctor MSP`, `Repair Doctor MSP`, and `Patient MSP` as well.
 
 <br>
 <p align="center">
@@ -355,9 +355,9 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
   - Select the MSP identifying the organization of the channel creator from the drop-down list. This should be `Insurance MSP (insurancemsp)`.
   - Associate available identity as `Insurance Admin`.
   - Click <b>Add</b> next to the insurance organization. Make the insurance organization an <b>Operator</b>.
-  - Click <b>Add</b> next to the shop organization. Make the shop organization an <b>Operator</b>.
-  - Click <b>Add</b> next to the repair shop organization. Make the repair shop organization an <b>Operator</b>.
-  - Click <b>Add</b> next to the police organization. Make the insurance organpoliceization an <b>Operator</b>.
+  - Click <b>Add</b> next to the doctor organization. Make the doctor organization an <b>Operator</b>.
+  - Click <b>Add</b> next to the repair doctor organization. Make the repair doctor organization an <b>Operator</b>.
+  - Click <b>Add</b> next to the patient organization. Make the insurance organpoliceization an <b>Operator</b>.
   - Click <b>Create</b>.
 
 <br>
@@ -371,7 +371,7 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
   - Click <b>Join channel</b> to launch the side panels.
   - Select your `Orderer` and click <b>Next</b>.
   - Enter the name of the channel you just created. `mychannel` and click <b>Next</b>.
-  - Select which peers you want to join the channel, click `Insurance Peer`, `Shop Peer`, `Repair Shop Peer`, and `Police Peer`.
+  - Select which peers you want to join the channel, click `Insurance Peer`, `Doctor Peer`, `Repair Doctor Peer`, and `Patient Peer`.
   - Click <b>Submit</b>.
 
 <br>
@@ -384,9 +384,9 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
   - In order to communicate between organizations, we need to enroll anchor peers.
   - From the channels tab, click on the channel you have created, `mychannel`.
   - From the channel overview page, click on `channel details`. Scroll all the way down until you see `Anchor peers`.
-  - Click `Add anchor peer` and add the Insurance, Police, Repair Shop,
-    and Shop peers.
-  - Select which peers you want to join the channel, click `Insurance Peer`, `Shop Peer`, `Repair Shop Peer`, and `Police Peer`.
+  - Click `Add anchor peer` and add the Insurance, Patient, Repair Doctor,
+    and Doctor peers.
+  - Select which peers you want to join the channel, click `Insurance Peer`, `Doctor Peer`, `Repair Doctor Peer`, and `Patient Peer`.
   - Click <b>Add anchor peer</b>.
   - If all went well, your channel Anchor peers should look like below:
 
@@ -419,7 +419,7 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 * #### Instantiate smart contract
   - On the smart contracts tab, find the smart contract from the list installed on your peers and click <b>Instantiate</b> from the overflow menu on the right side of the row.
   - On the side panel that opens, select the channel, `mychannel` to instantiate the smart contract on. Click <b>Next</b>.
-  - Select the organization members to be included in the policy, `insurancemsp`, `shopmsp`, `repairshopmsp`, `policemsp`.  Click <b>Next</b>.
+  - Select the organization members to be included in the policy, `insurancemsp`, `shopmsp`, `pharmamsp`, `policemsp`.  Click <b>Next</b>.
   - Give <b>Function name</b> of `Init` and leave <b>Arguments</b> blank.
   - Click <b>Instantiate</b>.
 
@@ -460,8 +460,8 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 </p>
 <br>
 
-* #### Create shop application admin (same process as shown above in the gif)
-  - Go to the <b>Nodes</b> tab on the left bar, and under <b>Certificate Authorities</b>, choose your <b>Shop CA</b>.
+* #### Create doctor application admin (same process as shown above in the gif)
+  - Go to the <b>Nodes</b> tab on the left bar, and under <b>Certificate Authorities</b>, choose your <b>Doctor CA</b>.
   - Click on <b>Register user</b>.
   - Give an <b>Enroll ID</b> and <b>Enroll Secret</b> to administer your application users, `shopApp-admin` and `shopApp-adminpw`.
   - Choose `client` as <b>Type</b>.
@@ -470,18 +470,18 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
   - Under <b>Attributes</b>, click on <b>Add attribute</b>.  Give attribute as `hf.Registrar.Roles` = `*`.  This will allow this identity to act as registrar and issues identities for our app.  Click <b>Add-attribute</b>.
   - Click <b>Register</b>.
 
-* #### Create repair shop application admin (same process as shown above in the gif)
-  - Go to the <b>Nodes</b> tab on the left bar, and under <b>Certificate Authorities</b>, choose your <b>Repair Shop CA</b>.
+* #### Create repair doctor application admin (same process as shown above in the gif)
+  - Go to the <b>Nodes</b> tab on the left bar, and under <b>Certificate Authorities</b>, choose your <b>Repair Doctor CA</b>.
   - Click on <b>Register user</b>.
-  - Give an <b>Enroll ID</b> and <b>Enroll Secret</b> to administer your application users, `repairShopApp-admin` and `repairShopApp-adminpw`.
+  - Give an <b>Enroll ID</b> and <b>Enroll Secret</b> to administer your application users, `pharmaApp-admin` and `pharmaApp-adminpw`.
   - Choose `client` as <b>Type</b>.
   - You can leave the <b>Use root affiliation</b> box checked.
   - You can leave the <b>Maximum enrollments</b> blank.
   - Under <b>Attributes</b>, click on <b>Add attribute</b>.  Give attribute as `hf.Registrar.Roles` = `*`.  This will allow this identity to act as registrar and issues identities for our app.  Click <b>Add-attribute</b>.
   - Click <b>Register</b>.
 
-* #### Create police application admin (same process as shown above in the gif)
-  - Go to the <b>Nodes</b> tab on the left bar, and under <b>Certificate Authorities</b>, choose your <b>Police CA</b>.
+* #### Create patient application admin (same process as shown above in the gif)
+  - Go to the <b>Nodes</b> tab on the left bar, and under <b>Certificate Authorities</b>, choose your <b>Patient CA</b>.
   - Click on <b>Register user</b>.
   - Give an <b>Enroll ID</b> and <b>Enroll Secret</b> to administer your application users, `policeApp-admin` and `policeApp-adminpw`.
   - Choose `client` as <b>Type</b>.
@@ -538,7 +538,7 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
     }
     ```
   - To find the other CA urls, you will need to click on the `Nodes` tab in IBM Blockchain Platform, then on 
-    the Shop CA, and on the settings cog icon at the top of the page. That will take you to the certificate 
+    the Doctor CA, and on the settings cog icon at the top of the page. That will take you to the certificate 
     authority settings, as shown in the picture below, and you can copy that endpoint URL into your `config.json` **caName**
     field. 
 
@@ -559,16 +559,16 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
     msg: Successfully enrolled admin user shopApp-admin and imported it into the wallet
     ```
 
-* #### Enroll repairShopApp-admin (same process as shown in gif above)
+* #### Enroll pharmaApp-admin (same process as shown in gif above)
   - First, change the appAdmin, appAdminSecret, and caName properties in your `config.json` file, 
   so that it looks something like this (your caName should be different than mine):
 
     ```js
     {
         "connection_file": "ibpConnection.json",
-        "appAdmin": "repairShopApp-admin",
-        "appAdminSecret": "repairShopApp-adminpw",
-        "orgMSPID": "repairshopmsp",
+        "appAdmin": "pharmaApp-admin",
+        "appAdminSecret": "pharmaApp-adminpw",
+        "orgMSPID": "pharmamsp",
         "caName": "https://fa707c454921423c80ec3c3c38d7545c-caf2e287.horeainsurancetest.us-south.containers.appdomain.cloud:7054",
         "userName": "repairUser",
         "gatewayDiscovery": { "enabled": true, "asLocalhost": false }
@@ -581,7 +581,7 @@ We will build a network as provided by the IBM Blockchain Platform [documentatio
 
   - You should see the following in the terminal:
     ```bash
-    msg: Successfully enrolled admin user repairShopApp-admin and imported it into the wallet
+    msg: Successfully enrolled admin user pharmaApp-admin and imported it into the wallet
     ```
 
 * #### Enroll policeApp-admin (same process as shown in gif above)
@@ -638,7 +638,7 @@ Login using your [docker hub](https://hub.docker.com/) credentials.
 docker login
 ```
 
-Run the build script to download and create docker images for the orderer, insurance-peer, police-peer, shop-peer, repairshop-peer, web application and certificate authorities for each peer. This will run for a few minutes.
+Run the build script to download and create docker images for the orderer, insurance-peer, patient-peer, doctor-peer, pharma-peer, web application and certificate authorities for each peer. This will run for a few minutes.
 
 For Mac user:
 ```bash
@@ -654,26 +654,26 @@ cd build-blockchain-insurance-app
 
 You should see the following output on console:
 ```
-Creating repairshop-ca ...
+Creating pharma-ca ...
 Creating insurance-ca ...
-Creating shop-ca ...
-Creating police-ca ...
+Creating doctor-ca ...
+Creating patient-ca ...
 Creating orderer0 ...
-Creating repairshop-ca
+Creating pharma-ca
 Creating insurance-ca
-Creating police-ca
-Creating shop-ca
+Creating patient-ca
+Creating doctor-ca
 Creating orderer0 ... done
 Creating insurance-peer ...
 Creating insurance-peer ... done
-Creating shop-peer ...
-Creating shop-peer ... done
-Creating repairshop-peer ...
-Creating repairshop-peer ... done
+Creating doctor-peer ...
+Creating doctor-peer ... done
+Creating pharma-peer ...
+Creating pharma-peer ... done
 Creating web ...
-Creating police-peer ...
+Creating patient-peer ...
 Creating web
-Creating police-peer ... done
+Creating patient-peer ... done
 ```
 
  <p align="center">
@@ -709,21 +709,21 @@ Successfully instantiated chaincode on all peers.
 
 Use the link http://localhost:3000 to load the web application in browser.
 
-The home page shows the participants (Peers) in the network. You can see that there is an Insurance, Repair Shop, Police and Shop Peer implemented. They are the participants of the network.
+The home page shows the participants (Peers) in the network. You can see that there is an Insurance, Repair Doctor, Patient and Doctor Peer implemented. They are the participants of the network.
 
 ![Blockchain Insurance](images/home.png)
 
-Imagine being a consumer (hereinafter called “Biker”) that wants to buy a phone, bike or Ski. By clicking on the “Go to the shop” section, you will be redirected to the shop (shop peer) that offers you the following products.
+Imagine being a consumer (hereinafter called “Biker”) that wants to buy a phone, bike or Ski. By clicking on the “Go to the doctor” section, you will be redirected to the doctor (doctor peer) that offers you the following products.
 
 ![Customer Shopping](images/Picture1.png)
 
-You can see the three products offered by the shop(s) now. In addition, you have insurance contracts available for them. In our scenario, you are an outdoor sport enthusiast who wants to buy a new Bike. Therefore, you’ll click on the Bike Shop section.
+You can see the three products offered by the doctor(s) now. In addition, you have insurance contracts available for them. In our scenario, you are an outdoor sport enthusiast who wants to buy a new Bike. Therefore, you’ll click on the Bike Doctor section.
 
 ![Shopping](images/Picture2.png)
 
 In this section, you are viewing the different bikes available in the store. You can select within four different Bikes. By clicking on next you’ll be forwarded to the next page which will ask for the customer’s personal data.
 
-![Bike Shop](images/Picture3.png)
+![Bike Doctor](images/Picture3.png)
 
 You have the choice between different insurance contracts that feature different coverage as well as terms and conditions. You are required to type-in your personal data and select a start and end date of the contract. Since there is a trend of short-term or event-driven contracts in the insurance industry you have the chance to select the duration of the contract on a daily basis. The daily price of the insurance contract is being calculated by a formula that had been defined in the chaincode. By clicking on next you will be forwarded to a screen that summarizes your purchase and shows you the total sum.
 

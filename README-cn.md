@@ -3,7 +3,7 @@
 
 # 构建区块链保险应用程序
 
-本项目展示在保险领域使用区块链来进行索赔处理。在本应用程序中，我们有 4 个参与者，分别是 Insurance、Police、Repair Shop 和 Shop 对等节点。Insurance 对等节点是为产品提供保险并负责处理索赔的保险公司。Police 对等节点负责核查被盗索赔。Repair Shop 对等节点负责修理产品，而 Shop 对等节点负责向用户销售产品。
+本项目展示在保险领域使用区块链来进行索赔处理。在本应用程序中，我们有 4 个参与者，分别是 Insurance、Patient、Repair Doctor 和 Doctor 对等节点。Insurance 对等节点是为产品提供保险并负责处理索赔的保险公司。Patient 对等节点负责核查被盗索赔。Repair Doctor 对等节点负责修理产品，而 Doctor 对等节点负责向用户销售产品。
 
 目标受众级别：中级开发人员
 
@@ -41,7 +41,7 @@ git clone https://github.com/IBM/build-blockchain-insurance-app.git
 Docker login
 ```
 
-运行构建脚本来下载并创建订购者、Insurance 对等节点、Police 对等节点、Shop 对等节点、Repair Shop 对等节点、Web 应用程序和每个对等节点的证书颁发机构的 Docker 镜像。
+运行构建脚本来下载并创建订购者、Insurance 对等节点、Patient 对等节点、Doctor 对等节点、Repair Doctor 对等节点、Web 应用程序和每个对等节点的证书颁发机构的 Docker 镜像。
 
 对于 Mac 用户：
 ```bash
@@ -57,26 +57,26 @@ cd build-blockchain-insurance-app
 
 您会在控制台上看到以下输出：
 ```
-Creating repairshop-ca ...
+Creating pharma-ca ...
 Creating insurance-ca ...
-Creating shop-ca ...
-Creating police-ca ...
+Creating doctor-ca ...
+Creating patient-ca ...
 Creating orderer0 ...
-Creating repairshop-ca
+Creating pharma-ca
 Creating insurance-ca
-Creating police-ca
-Creating shop-ca
+Creating patient-ca
+Creating doctor-ca
 Creating orderer0 ... done
 Creating insurance-peer ...
 Creating insurance-peer ... done
-Creating shop-peer ...
-Creating shop-peer ... done
-Creating repairshop-peer ...
-Creating repairshop-peer ... done
+Creating doctor-peer ...
+Creating doctor-peer ... done
+Creating pharma-peer ...
+Creating pharma-peer ... done
 Creating web ...
-Creating police-peer ...
+Creating patient-peer ...
 Creating web
-Creating police-peer ... done
+Creating patient-peer ... done
 ```
 
 **等待几分钟，让应用程序在网络上安装并实例化该链代码**
@@ -99,9 +99,9 @@ npm info lifecycle blockchain-for-insurance@2.1.0~serve: blockchain-for-insuranc
 /app/app/static/js
 Server running on port: 3000
 info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"insurance-peer","grpc.default_authority":"insurance-peer"}
-info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"shop-peer","grpc.default_authority":"shop-peer"}
-info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"repairshop-peer","grpc.default_authority":"repairshop-peer"}
-info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"police-peer","grpc.default_authority":"police-peer"}
+info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"doctor-peer","grpc.default_authority":"doctor-peer"}
+info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"pharma-peer","grpc.default_authority":"pharma-peer"}
+info: [EventHub.js]: _connect - options {"grpc.ssl_target_name_override":"patient-peer","grpc.default_authority":"patient-peer"}
 Default channel not found, attempting creation...
 Successfully created a new default channel.
 Joining peers to the default channel.
@@ -117,15 +117,15 @@ Successfully instantiated chaincode on all peers.
 
 使用链接 http://localhost:3000 将该 Web 应用程序加载到浏览器中。
 
-主页显示了网络中的参与者（对等节点）。您可以看到这里实现了 Insurance、Repair Shop、Police 和 Shop 对等节点。它们是网络的参与者。
+主页显示了网络中的参与者（对等节点）。您可以看到这里实现了 Insurance、Repair Doctor、Patient 和 Doctor 对等节点。它们是网络的参与者。
 
 ![区块链保险](images/home.png)
 
-假设您是一位希望购买手机、自行车或滑雪板的用户（下文称为“骑行者”）。通过单击“Go to the shop”部分，您被重定向到提供了以下产品的商店（shop 对等节点）。
+假设您是一位希望购买手机、自行车或滑雪板的用户（下文称为“骑行者”）。通过单击“Go to the doctor”部分，您被重定向到提供了以下产品的商店（doctor 对等节点）。
 
 ![客户购物](images/Picture1.png)
 
-可以看到该商店现在提供了 3 款产品。此外，您拥有可用于这些产品的保险合约。在我们的场景中，您是一位想买一辆新自行车的户外运动爱好者。因此，您将单击 Bike Shop 部分。
+可以看到该商店现在提供了 3 款产品。此外，您拥有可用于这些产品的保险合约。在我们的场景中，您是一位想买一辆新自行车的户外运动爱好者。因此，您将单击 Bike Doctor 部分。
 
 ![购物](images/Picture2.png)
 
@@ -176,9 +176,9 @@ Successfully instantiated chaincode on all peers.
 
 ![索赔处理](images/Picture12.png)
 
-Police 对等节点可以查看包含盗窃的索赔。如果报告自行车被盗了，他们可以确认该索赔并包含一个文件引用编号。如果没有报告盗窃，他们可以拒绝该索赔，索赔不会被处理。
+Patient 对等节点可以查看包含盗窃的索赔。如果报告自行车被盗了，他们可以确认该索赔并包含一个文件引用编号。如果没有报告盗窃，他们可以拒绝该索赔，索赔不会被处理。
 
-![Police 对等节点](images/Picture13.png)
+![Patient 对等节点](images/Picture13.png)
 
 我们假设骑行者没有勒索保险公司，而且已经报告了自行车被盗。警察将确认该索赔，这会导致另一个区块被写入区块链中。
 

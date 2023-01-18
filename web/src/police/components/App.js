@@ -11,7 +11,7 @@ const app = ({ children }) => {
       <div className='ibm-columns'>
         <div className='ibm-col-1-1'>
           <h2 className='ibm-h2'>
-            <FormattedMessage id='Police' />
+            <FormattedMessage id='Patient' />
           </h2>
         </div>
       </div>

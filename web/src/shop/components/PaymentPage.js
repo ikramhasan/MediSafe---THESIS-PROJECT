@@ -187,8 +187,8 @@ class PaymentPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    shopType: state.shop.type,
-    productInfo: state.shop.productInfo,
+    shopType: state.doctor.type,
+    productInfo: state.doctor.productInfo,
     contractInfo: state.insurance.contractInfo,
     payed: state.payment.payed,
     user: state.userMgmt.user

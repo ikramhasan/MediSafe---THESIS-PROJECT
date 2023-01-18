@@ -3,7 +3,7 @@
 import * as PoliceActionType from '../actions/policeActionTypes';
 import * as initialState from './initialState';
 
-export default function policeReducer(state = initialState.police, action) {
+export default function policeReducer(state = initialState.patient, action) {
   switch (action.type) {
     case PoliceActionType.LOAD_THEFT_CLAIMS_SUCCESS:
       return Object.assign({}, state, { theftClaims: action.theftClaims });

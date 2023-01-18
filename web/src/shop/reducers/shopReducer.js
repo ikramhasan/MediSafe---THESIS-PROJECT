@@ -3,7 +3,7 @@
 import * as ShopActionType from '../actions/shopActionTypes';
 import * as initialState from './initialState';
 
-export default function shopReducer(state = initialState.shop, action) {
+export default function shopReducer(state = initialState.doctor, action) {
   switch (action.type) {
     case ShopActionType.SET_SHOP_TYPE:
       return Object.assign({}, state,

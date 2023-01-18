@@ -60,8 +60,8 @@ class TheftClaimsPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    theftClaims: state.police.theftClaims,
-    loading: Array.isArray(state.police.theftClaims)
+    theftClaims: state.patient.theftClaims,
+    loading: Array.isArray(state.patient.theftClaims)
   };
 }
 

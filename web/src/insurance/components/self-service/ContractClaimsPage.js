@@ -48,7 +48,7 @@ class ContractClaimsPage extends React.Component {
       let message, messageId, reimbursable;
       switch (claim.status) {
         case 'N':
-          messageId = claim.isTheft ? 'Expecting confirmation from police'
+          messageId = claim.isTheft ? 'Expecting confirmation from patient'
             : 'Being Processed';
           break;
         case 'R':
@@ -63,7 +63,7 @@ class ContractClaimsPage extends React.Component {
           </span>;
           break;
         case 'P':
-          messageId = 'Theft confirmed by police';
+          messageId = 'Theft confirmed by patient';
           break;
         case 'J':
           messageId = 'Rejected';

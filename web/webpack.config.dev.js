@@ -15,9 +15,9 @@ export default {
       ...hotReloadModules,
       resolve(__dirname, 'src/common')
     ],
-    'shop': [...hotReloadModules, resolve(__dirname, 'src/shop/index')],
-    'police': [...hotReloadModules, resolve(__dirname, 'src/police/index')],
-    'repair-shop': [...hotReloadModules, resolve(__dirname, 'src/repair-shop/index')],
+    'doctor': [...hotReloadModules, resolve(__dirname, 'src/doctor/index')],
+    'patient': [...hotReloadModules, resolve(__dirname, 'src/patient/index')],
+    'repair-doctor': [...hotReloadModules, resolve(__dirname, 'src/repair-doctor/index')],
     'insurance': [...hotReloadModules, resolve(__dirname, 'src/insurance/index')],
     'block-explorer': [...hotReloadModules, resolve(__dirname, 'src/block-explorer/index')]
   },

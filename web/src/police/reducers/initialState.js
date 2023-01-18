@@ -1,6 +1,6 @@
 'use strict';
 
-export const police = {
+export const patient = {
   theftClaims: null
 };
 

@@ -58,12 +58,12 @@ if [ $BUILD ];
     echo '############################################################'
     docker build -t orderer:latest orderer/
     docker build -t insurance-peer:latest insurancePeer/
-    docker build -t police-peer:latest policePeer/
-    docker build -t shop-peer:latest shopPeer/
-    docker build -t repairshop-peer:latest repairShopPeer/
+    docker build -t patient-peer:latest patientPeer/
+    docker build -t doctor-peer:latest doctorPeer/
+    docker build -t pharma-peer:latest pharmaPeer/
     docker build -t web:latest web/
     docker build -t insurance-ca:latest insuranceCA/
-    docker build -t police-ca:latest policeCA/
-    docker build -t shop-ca:latest shopCA/
-    docker build -t repairshop-ca:latest repairShopCA/
+    docker build -t patient-ca:latest policeCA/
+    docker build -t doctor-ca:latest shopCA/
+    docker build -t pharma-ca:latest pharmaCA/
 fi

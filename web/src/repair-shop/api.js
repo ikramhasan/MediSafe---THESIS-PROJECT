@@ -3,7 +3,7 @@
 import fetch from 'isomorphic-fetch';
 
 export function getRepairOrders() {
-  return fetch('/repair-shop/api/repair-orders', {
+  return fetch('/repair-doctor/api/repair-orders', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ export function getRepairOrders() {
 }
 
 export function completeRepairOrder(uuid) {
-  return fetch('/repair-shop/api/complete-repair-order', {
+  return fetch('/repair-doctor/api/complete-repair-order', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json'

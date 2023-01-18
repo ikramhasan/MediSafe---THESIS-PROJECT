@@ -10,13 +10,13 @@ const app = ({ children, shopType }) => {
   let shopHeadingMessage;
   switch (shopType) {
     case 'bikes':
-      shopHeadingMessage = <FormattedMessage id='Bike Shop' />;
+      shopHeadingMessage = <FormattedMessage id='Bike Doctor' />;
       break;
     case 'smart-phones':
-      shopHeadingMessage = <FormattedMessage id='Smart Phone Shop' />;
+      shopHeadingMessage = <FormattedMessage id='Smart Phone Doctor' />;
       break;
     case 'skis':
-      shopHeadingMessage = <FormattedMessage id='Ski Shop' />;
+      shopHeadingMessage = <FormattedMessage id='Ski Doctor' />;
       break;
   }
 
@@ -46,7 +46,7 @@ app.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    shopType: state.shop.type
+    shopType: state.doctor.type
   };
 }
 

@@ -12,7 +12,7 @@ export default function(app) {
     frameguard: false
   }));
 
-  app.use(['shop/api/', 'police/api/', 'repair-shop/api/', 'insurance/api/'],
+  app.use(['doctor/api/', 'patient/api/', 'repair-doctor/api/', 'insurance/api/'],
   expressRateLimit({
     windowMs: 30 * 1000,
     delayMs: 0,

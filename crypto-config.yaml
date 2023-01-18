@@ -12,17 +12,17 @@ PeerOrgs:
   - Hostname: insurance-peer
     CommonName: "{{.Hostname}}"
 - Name: ShopOrg
-  Domain: shop-org
+  Domain: doctor-org
   Specs:
-  - Hostname: shop-peer
+  - Hostname: doctor-peer
     CommonName: "{{.Hostname}}"
-- Name: RepairShopOrg
-  Domain: repairshop-org
+- Name: PharmaOrg
+  Domain: pharma-org
   Specs:
-  - Hostname: repairshop-peer
+  - Hostname: pharma-peer
     CommonName: "{{.Hostname}}"
 - Name: PoliceOrg
-  Domain: police-org
+  Domain: patient-org
   Specs:
-  - Hostname: police-peer
+  - Hostname: patient-peer
     CommonName: "{{.Hostname}}"

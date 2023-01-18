@@ -11,6 +11,6 @@ npm-debug.log
 bin
 dist
 insurance-peer
-shop-peer
-police-peer
-repairshop-peer
+doctor-peer
+patient-peer
+pharma-peer

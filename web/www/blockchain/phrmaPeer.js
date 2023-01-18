@@ -2,7 +2,7 @@
 
 import config from './config';
 import { wrapError } from './utils';
-import { repairShopClient as client, isReady } from './setup';
+import { pharmaClient as client, isReady } from './setup';
 
 import network from './invoke';
 
@@ -45,7 +45,7 @@ export const prependListener = client.prependListener.bind(client);
 export const removeListener = client.removeListener.bind(client);
 
 //identity to use for submitting transactions to smart contract
-const peerType = 'repairShopApp-admin'
+const peerType = 'pharmaApp-admin'
 let isQuery = false;
 
 async function invoke(fcn, ...args) {

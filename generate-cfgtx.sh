@@ -30,9 +30,9 @@ $PROJPATH/configtxgen -profile FourOrgsChannel -outputAnchorPeersUpdate $CLIPATH
 
 echo
 echo "##################################################################"
-echo "####### Generating anchor peer update for RepairShopOrg ##########"
+echo "####### Generating anchor peer update for PharmaOrg ##########"
 echo "##################################################################"
-$PROJPATH/configtxgen -profile FourOrgsChannel -outputAnchorPeersUpdate $CLIPATH/RepairShopOrgMSPAnchors.tx -channelID $CHANNEL_NAME -asOrg RepairShopOrgMSP
+$PROJPATH/configtxgen -profile FourOrgsChannel -outputAnchorPeersUpdate $CLIPATH/PharmaOrgMSPAnchors.tx -channelID $CHANNEL_NAME -asOrg PharmaOrgMSP
 
 echo
 echo "##################################################################"

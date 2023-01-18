@@ -60,26 +60,26 @@ cd build-blockchain-insurance-app
 
 You should see the following output on console:
 ```
-Creating repairshop-ca ...
+Creating pharma-ca ...
 Creating insurance-ca ...
-Creating shop-ca ...
-Creating police-ca ...
+Creating doctor-ca ...
+Creating patient-ca ...
 Creating orderer0 ...
-Creating repairshop-ca
+Creating pharma-ca
 Creating insurance-ca
-Creating police-ca
-Creating shop-ca
+Creating patient-ca
+Creating doctor-ca
 Creating orderer0 ... done
 Creating insurance-peer ...
 Creating insurance-peer ... done
-Creating shop-peer ...
-Creating shop-peer ... done
-Creating repairshop-peer ...
-Creating repairshop-peer ... done
+Creating doctor-peer ...
+Creating doctor-peer ... done
+Creating pharma-peer ...
+Creating pharma-peer ... done
 Creating web ...
-Creating police-peer ...
+Creating patient-peer ...
 Creating web
-Creating police-peer ... done
+Creating patient-peer ... done
 ```
 
 **アプリケーションがネットワークにチェーンコードをインストールしてインスタンス化するまで数分間待ちます。**
@@ -124,7 +124,7 @@ http://localhost:3000 のリンクでブラウザでWebアプリケーション�
 
 このセクションでは、店舗で利用可能なさまざまな自転車を見ています。 4種類の自転車内で選択できます。 次へをクリックすると、次のページに転送され、顧客の個人データが要求されます。
 
-![Bike Shop](images/Picture3.png)
+![Bike Doctor](images/Picture3.png)
 
 さまざまな保険契約と契約条件の異なる保険契約の中から選択することができます。 個人データを入力し、契約の開始日と終了日を選択する必要があります。 保険業界では、短期またはイベント主導の契約の傾向があるため、契約の期間を日単位で選択する機会があります。 保険契約の1日の価格は、チェーンコードで定義された数式によって計算されています。 次へをクリックすると、購入を要約した画面に転送され、総額が表示されます。
 
@@ -171,11 +171,11 @@ http://localhost:3000 のリンクでブラウザでWebアプリケーション�
 
 警察は、盗難を含む請求を閲覧することができます。 自転車の盗難が報告されている場合は、主張を確認してファイル参照番号を記載することができます。 盗難が報告されていない場合、訴訟は却下され、処理されません。
 
-![Police Peer](images/Picture13.png)
+![Patient Peer](images/Picture13.png)
 
 バイカーが保険会社を盗まれておらず、バイクを盗難として報告したとしましょう。 警察は、別のブロックがチェーンに書き込まれるという請求を確認します。
 
-![Police Transaction](images/Picture14.png)
+![Patient Transaction](images/Picture14.png)
 
 「クレーム処理」タブに戻ると、警察が自転車が盗難されたことを確認したため、保険会社に請求を払い戻すオプションがあることがわかります。 ブロックがチェーンに書き込まれます。
 
@@ -197,7 +197,7 @@ http://localhost:3000 のリンクでブラウザでWebアプリケーション�
 
 修理工場に修理指示を示すメッセージが表示されます。 彼らが修理作業を完了すると、修理工場は完了した注文をマークすることができます。 その後、保険会社は修理工場への支払いを進めるメッセージを受け取る。 ブロックがチェーンに書き込まれます。
 
-![Reapir Shop](images/Picture19.png)
+![Reapir Doctor](images/Picture19.png)
 
 バイカーは、彼の「請求セルフサービス」タブで、請求が解決され、自転車が店で修理されたことを見ることができます。
 

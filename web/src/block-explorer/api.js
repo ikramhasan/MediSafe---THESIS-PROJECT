@@ -3,15 +3,15 @@
 import fetch from 'isomorphic-fetch';
 
 export function getBlocksFromShop(noOfLastBlocks) {
-  return getBlocks('/shop/api/blocks', noOfLastBlocks);
+  return getBlocks('/doctor/api/blocks', noOfLastBlocks);
 }
 
 export function getBlocksFromSelfService(noOfLastBlocks) {
   return getBlocks('/self-service/api/blocks', noOfLastBlocks);
 }
 
-export function getBlocksFromRepairShop(noOfLastBlocks) {
-  return getBlocks('/repair-shop/api/blocks', noOfLastBlocks);
+export function getBlocksFromPharma(noOfLastBlocks) {
+  return getBlocks('/repair-doctor/api/blocks', noOfLastBlocks);
 }
 
 export function getBlocksFromContractManagement(noOfLastBlocks) {

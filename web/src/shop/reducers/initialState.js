@@ -1,6 +1,6 @@
 'use strict';
 
-export const shop = {
+export const doctor = {
   type: undefined,
   products: [],
   productInfo: undefined

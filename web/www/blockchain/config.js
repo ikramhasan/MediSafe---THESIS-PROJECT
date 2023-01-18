@@ -36,53 +36,53 @@ const config = {
   },
   policeOrg: {
     peer: {
-      hostname: 'police-peer',
-      url: 'grpcs://police-peer:7051',
-      eventHubUrl: 'grpcs://police-peer:7053',
+      hostname: 'patient-peer',
+      url: 'grpcs://patient-peer:7051',
+      eventHubUrl: 'grpcs://patient-peer:7053',
       pem: readCryptoFile('policeOrg.pem')
     },
     ca: {
-      hostname: 'police-ca',
-      url: 'https://police-ca:7054',
+      hostname: 'patient-ca',
+      url: 'https://patient-ca:7054',
       mspId: 'PoliceOrgMSP'
     },
     admin: {
-      key: readCryptoFile('Admin@police-org-key.pem'),
-      cert: readCryptoFile('Admin@police-org-cert.pem')
+      key: readCryptoFile('Admin@patient-org-key.pem'),
+      cert: readCryptoFile('Admin@patient-org-cert.pem')
     }
   },
   shopOrg: {
     peer: {
-      hostname: 'shop-peer',
-      url: 'grpcs://shop-peer:7051',
-      eventHubUrl: 'grpcs://shop-peer:7053',
+      hostname: 'doctor-peer',
+      url: 'grpcs://doctor-peer:7051',
+      eventHubUrl: 'grpcs://doctor-peer:7053',
       pem: readCryptoFile('shopOrg.pem')
     },
     ca: {
-      hostname: 'shop-ca',
-      url: 'https://shop-ca:7054',
+      hostname: 'doctor-ca',
+      url: 'https://doctor-ca:7054',
       mspId: 'ShopOrgMSP'
     },
     admin: {
-      key: readCryptoFile('Admin@shop-org-key.pem'),
-      cert: readCryptoFile('Admin@shop-org-cert.pem')
+      key: readCryptoFile('Admin@doctor-org-key.pem'),
+      cert: readCryptoFile('Admin@doctor-org-cert.pem')
     }
   },
-  repairShopOrg: {
+  pharmaOrg: {
     peer: {
-      hostname: 'repairshop-peer',
-      url: 'grpcs://repairshop-peer:7051',
-      pem: readCryptoFile('repairShopOrg.pem'),
-      eventHubUrl: 'grpcs://repairshop-peer:7053',
+      hostname: 'pharma-peer',
+      url: 'grpcs://pharma-peer:7051',
+      pem: readCryptoFile('pharmaOrg.pem'),
+      eventHubUrl: 'grpcs://pharma-peer:7053',
     },
     ca: {
-      hostname: 'repairshop-ca',
-      url: 'https://repairshop-ca:7054',
-      mspId: 'RepairShopOrgMSP'
+      hostname: 'pharma-ca',
+      url: 'https://pharma-ca:7054',
+      mspId: 'PharmaOrgMSP'
     },
     admin: {
-      key: readCryptoFile('Admin@repairshop-org-key.pem'),
-      cert: readCryptoFile('Admin@repairshop-org-cert.pem')
+      key: readCryptoFile('Admin@pharma-org-key.pem'),
+      cert: readCryptoFile('Admin@pharma-org-cert.pem')
     }
   }
 };
@@ -92,17 +92,17 @@ if (process.env.LOCALCONFIG) {
 
   config.insuranceOrg.peer.url = 'grpcs://localhost:7051';
   config.shopOrg.peer.url = 'grpcs://localhost:8051';
-  config.repairShopOrg.peer.url = 'grpcs://localhost:9051';
+  config.pharmaOrg.peer.url = 'grpcs://localhost:9051';
   config.policeOrg.peer.url = 'grpcs://localhost:10051';
 
   config.insuranceOrg.peer.eventHubUrl = 'grpcs://localhost:7053';
   config.shopOrg.peer.eventHubUrl = 'grpcs://localhost:8053';
-  config.repairShopOrg.peer.eventHubUrl = 'grpcs://localhost:9053';
+  config.pharmaOrg.peer.eventHubUrl = 'grpcs://localhost:9053';
   config.policeOrg.peer.eventHubUrl = 'grpcs://localhost:10053';
 
   config.insuranceOrg.ca.url = 'https://localhost:7054';
   config.shopOrg.ca.url = 'https://localhost:8054';
-  config.repairShopOrg.ca.url = 'https://localhost:9054';
+  config.pharmaOrg.ca.url = 'https://localhost:9054';
   config.policeOrg.ca.url = 'https://localhost:10054';
 }
 

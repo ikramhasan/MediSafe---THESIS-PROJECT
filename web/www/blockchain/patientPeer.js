@@ -64,8 +64,8 @@ async function invoke(fcn, ...args) {
   
   isQuery = false;
 
-  console.log(`args in policePeer invoke: ${util.inspect(...args)}`)
-  console.log(`func in policePeer invoke: ${util.inspect(fcn)}`)
+  console.log(`args in patientPeer invoke: ${util.inspect(...args)}`)
+  console.log(`func in patientPeer invoke: ${util.inspect(fcn)}`)
 
   if (config.isCloud) {
     await network.invokeCC(isQuery, peerType, fcn, ...args);
@@ -79,8 +79,8 @@ async function query(fcn, ...args) {
 
   isQuery = true; 
   
-  console.log(`args in policePeer query: ${util.inspect(...args)}`)
-  console.log(`func in policePeer query: ${util.inspect(fcn)}`)
+  console.log(`args in patientPeer query: ${util.inspect(...args)}`)
+  console.log(`func in patientPeer query: ${util.inspect(fcn)}`)
 
   if (config.isCloud) {
     await network.invokeCC(isQuery, peerType, fcn, ...args);

@@ -1,11 +1,11 @@
 import express from 'express';
 
-import * as PolicePeer from '../blockchain/policePeer';
+import * as PatientPeer from '../blockchain/patientPeer';
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('police', { policeActive: true });
+  res.render('patient', { policeActive: true });
 });
 
 function generatePassword() {
@@ -35,7 +35,7 @@ function generatePassword() {
 router.post('/api/claims', async (req, res) => {
   console.log("hi");
   try {
-    const theftClaims = await PolicePeer.listTheftClaims();
+    const theftClaims = await PatientPeer.listTheftClaims();
     res.json(theftClaims || []);
   } catch (e) {
     res.json({ error: 'Error accessing blockchain.' });
@@ -53,7 +53,7 @@ router.post('/api/process-claim', async (req, res) => {
   }
 
   try {
-    await PolicePeer.processTheftClaim({
+    await PatientPeer.processTheftClaim({
       contractUuid, uuid, isTheft, fileReference
     });
     res.json({ success: true, uuid });
@@ -74,7 +74,7 @@ router.post('/api/register-patient', async (req, res) => {
       
       let passwordProposal = generatePassword();
       try {
-        let responseUser = await PolicePeer.registerPatient({
+        let responseUser = await PatientPeer.registerPatient({
           username: email,
           firstName: firstName,
           lastName: lastName,
@@ -94,7 +94,7 @@ router.post('/api/register-patient', async (req, res) => {
 });
 
 function wsConfig(io) {
-  PolicePeer.on('block', block => { io.emit('block', block); });
+  PatientPeer.on('block', block => { io.emit('block', block); });
 }
 
 export default router;

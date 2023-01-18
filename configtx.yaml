@@ -10,7 +10,7 @@ Profiles:
         Organizations:
         - *InsuranceOrg
         - *ShopOrg
-        - *RepairShopOrg
+        - *PharmaOrg
         - *PoliceOrg
   FourOrgsChannel:
     Consortium: InsuranceConsortium
@@ -19,7 +19,7 @@ Profiles:
       Organizations:
       - *InsuranceOrg
       - *ShopOrg
-      - *RepairShopOrg
+      - *PharmaOrg
       - *PoliceOrg
 
 Organizations:
@@ -37,23 +37,23 @@ Organizations:
 - &ShopOrg
   Name: ShopOrgMSP
   ID: ShopOrgMSP
-  MSPDir: cli/peers/peerOrganizations/shop-org/msp
+  MSPDir: cli/peers/peerOrganizations/doctor-org/msp
   AnchorPeers:
-  - Host: shop-peer
+  - Host: doctor-peer
     Port: 7051
-- &RepairShopOrg
-  Name: RepairShopOrgMSP
-  ID: RepairShopOrgMSP
-  MSPDir: cli/peers/peerOrganizations/repairshop-org/msp
+- &PharmaOrg
+  Name: PharmaOrgMSP
+  ID: PharmaOrgMSP
+  MSPDir: cli/peers/peerOrganizations/pharma-org/msp
   AnchorPeers:
-  - Host: repairshop-peer
+  - Host: pharma-peer
     Port: 7051
 - &PoliceOrg
     Name: PoliceOrgMSP
     ID: PoliceOrgMSP
-    MSPDir: cli/peers/peerOrganizations/police-org/msp
+    MSPDir: cli/peers/peerOrganizations/patient-org/msp
     AnchorPeers:
-    - Host: police-peer
+    - Host: patient-peer
       Port: 7051
 
 Orderer: &OrdererDefaults

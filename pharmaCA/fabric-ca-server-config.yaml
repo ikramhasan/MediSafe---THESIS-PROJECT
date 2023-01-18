@@ -9,7 +9,7 @@ tls:
     certfiles:
 
 ca:
-  name: repairshop-org
+  name: pharma-org
   keyfile: ./ca/key.pem
   certfile: ./ca/cert.pem
   chainfile: ./ca/cert.pem
@@ -60,7 +60,7 @@ csr:
     O: "IBM"
     OU: "Cloud"
   hosts:
-  - repairshop-ca
+  - pharma-ca
   - localhost
   ca:
     expiry: 131400h

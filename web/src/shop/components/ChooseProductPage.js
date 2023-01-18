@@ -153,9 +153,9 @@ function generateSerialNo() {
 
 function mapStateToProps(state, ownProps) {
   return {
-    shopType: state.shop.type,
-    products: state.shop.products,
-    productInfo: state.shop.productInfo
+    shopType: state.doctor.type,
+    products: state.doctor.products,
+    productInfo: state.doctor.productInfo
   };
 }
 
